@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Majda & Yasser - Wedding 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script type="module" src="./main.js" defer></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div style="background: #FEF9F5;">
+        <!-- HERO SECTION -->
+        <section class="section-hero">
+            <div class="container-inner">
+                <div class="scrollblurred absolute left-0 top-0 bottom-0 w-[50px]">
+                    <img class="w-full h-auto" src="./column_left_deau9trj_png_2x.webp" alt="Pillar">
+                </div>
+                <div class="header-content">
+                    <!-- <div class="ornament-top">✦</div> -->
+                    
+                    <h1 class="heading-display text-center text-amber-900" style="color: #7F6A4B;">
+                        Majda & Yasser
+                    </h1>
+                    
+                    <p class="text-center sans-font text-sm tracking-widest text-amber-700 mt-2 mb-8" style="color: #7F6A4B;">
+                        Countdown until 12 JUNE 2026
+                    </p>
+
+                    <!-- Countdown -->
+                    <div
+                    x-data="{
+                        targetDate: new Date('2026-06-12T23:59:59').getTime(),
+                        days: 0,
+                        hours: 0,
+                        minutes: 0,
+                        seconds: 0,
+                        updateCountdown() {
+                            const now = new Date().getTime();
+                            const distance = this.targetDate - now;
+
+                            if (distance < 0) {
+                                // Timer reached zero
+                                this.days = this.hours = this.minutes = this.seconds = 0;
+                                return;
+                            }
+
+                            this.days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                            this.hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                            this.minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                            this.seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                        },
+                        init() {
+                            this.updateCountdown();
+                            setInterval(() => this.updateCountdown(), 1000);
+                        }
+                    }"
+                    class="flex justify-center gap-6 sm:gap-8 mb-8">
+                        <div class="countdown-box">
+                            <div class="countdown-number" x-text="days">00</div>
+                            <div class="countdown-label">Days</div>
+                        </div>
+                        <div class="countdown-box">
+                            <div class="countdown-number" x-text="hours">00</div>
+                            <div class="countdown-label">Hours</div>
+                        </div>
+                        <div class="countdown-box">
+                            <div class="countdown-number" x-text="minutes">00</div>
+                            <div class="countdown-label">Minutes</div>
+                        </div>
+                        <div class="countdown-box">
+                            <div class="countdown-number animate-pulse" x-text="seconds">00</div>
+                            <div class="countdown-label">Seconds</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="scrollblurred absolute right-0 top-0 bottom-0 w-[50px]">
+                    <img class="w-full h-auto" src="./column_right_dejzoxz8_png_2x.webp" alt="Pillar">
+                </div>
+            </div>
+        </section>
+
+        <!-- AQD NIKAH SECTION -->
+        <section class="section-content lg:pt-8 pt-24">
+            <div class="headline-fade container-inner">
+                <div class="event-card text-center">
+                    <p class="hidden sans-font text-xs tracking-widest text-amber-700 uppercase mb-4" style="color: #7F6A4B;">Ceremony</p>
+                    <h2 class="heading-section" style="color: #7F6A4B;">Aqd Nikah</h2>
+                    <p class="heading-section text-amber-900 mb-4" style="color: #7F6A4B;"> (Ijab and Qubul) </p>
+
+                    <!-- Mosque Image Placeholder -->
+                    <div class="h-48 mb-6 mx-auto max-w-xs">
+                        <img class="mx-auto" src="./mosque_asset.webp" alt="">
+                    </div>
+
+                    <div class="bg-[#F9F4EF] hover:brightness-95 border border-stone-200 p-4 lg:p-8 rounded-2xl max-w-xl mx-auto">
+                        <div class="event-location font-bold" style="color: #A78347;">La Grande Mosquée de Tànger</div>
+                        
+                        <div class="event-details" style="color: #7F6A4B;">
+                            <div class="lg:text-xl text-md font-medium">12 JUNE 2026</div>
+                            <div>1:00 PM</div>
+                        </div>
+
+                        <div style="display: flex; justify-content: center;">
+                            <a href="#" class="event-link">View on Map →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CELEBRATIONS SECTION -->
+        <section class="section-content">
+            <div class="headline-fade container-inner">
+                <h2 class="heading-section text-center" style="color: #7F6A4B;">The Celebrations</h2>
+
+                <div class="event-card text-center">
+                    <p class="hidden sans-font text-xs tracking-widest text-amber-700 uppercase mb-4" style="color: #7F6A4B;">Reception</p>
+                    <p class="heading-section" style="color: #7F6A4B;">Wedding Party</p>
+
+                    <!-- Venue Image Placeholder -->
+                    <div class="h-48 mb-6 mx-auto max-w-xs">
+                        <img class="mx-auto" src="./hotel_asset.webp" alt="">
+                    </div>
+
+                    <div class="bg-[#F9F4EF] hover:brightness-95 border border-stone-200 p-4 lg:p-8 rounded-2xl max-w-xl mx-auto">
+                        <div class="event-location font-bold" style="color: #A78347;">The Peninsula Tànger</div>
+                        
+                        <div class="event-details" style="color: #7F6A4B;">
+                            <div class="lg:text-xl text-md font-medium">12 JUNE 2026</div>
+                            <div>6:00 PM</div>
+                        </div>
+
+                        <div style="display: flex; justify-content: center;">
+                            <a href="#" class="event-link">View on Map →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DRESS CODE SECTION -->
+        <section class="section-content">
+            <div class="headline-fade container-inner">
+                <h2 class="heading-section text-center mb-4" style="color: #7F6A4B;">Dress Code</h2>
+                <div class="relative bg-[#F9F4EF] hover:brightness-95 border border-stone-200 p-4 lg:p-6 rounded-2xl max-w-xl mx-auto">
+                    <img class="absolute -left-4 -top-4 w-[45px] lg:w-20" src="./dresscode_flower.webp" alt="dresscode flower">
+                    <p class="sans-font text-xs tracking-widest text-amber-700 uppercase mt-6 text-center" style="color: #7F6A4B;">Wedding</p>
+                    <p class="lg:text-xl text-md font-medium mx-auto w-full text-center mb-6" style="color: #7F6A4B;">12 JUNE 2026</p>
+                    <p class="heading-section text-amber-900 mx-auto text-center mb-4 font-bold" style="color: #A78347;"> Formal Suit Attire & Moroccan Formal Caftans</p>
+
+                    <div class="h-48 mb-0 mx-auto max-w-xs">
+                        <img class="mx-auto" src="./SuitAttire.webp" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WEDDING GIFT SECTION -->
+        <section class="section-content">
+            <div class="headline-fade container-inner">
+                <h2 class="heading-section text-center mb-6" style="color: #7F6A4B;">Wedding Gift</h2>
+
+                <div class="relative bg-[#F9F4EF] hover:brightness-95 border border-stone-200 p-10 lg:p-16 rounded-2xl max-w-xl mx-auto">
+                    <img class="absolute -left-6 -top-6 w-20 lg:w-28" src="./roses_top_left.webp" alt="dresscode flower">
+                    <h3 class="text-center display-font lg:text-3xl text-2xl mb-6 font-bold" style="color: #A78347;">Your presence is our greatest gift.</h3>
+
+                    <p class="text-body text-center">
+                        If you wish to honour us with a gift, we kindly prefer monetary contributions. Bank details will be shared separately.
+                    </p>
+                    <img class="absolute -right-6 -bottom-6 w-20 lg:w-28" src="./roses_bottom_right.webp" alt="dresscode flower">
+                </div>
+            </div>
+        </section>
+
+        <!-- RSVP SECTION -->
+        <section class="section-content">
+            <div class="headline-fade container-inner">
+                <h2 class="heading-section" style="color: #7F6A4B;">RSVP</h2>
+                <p class="sans-font text-xs tracking-widest text-amber-700 uppercase mb-8" style="color: #7F6A4B;">
+                    The favour of a reply is kindly requested by the first of June, 2026
+                </p>
+
+                <form class="space-y-6">
+                    <!-- Will you be joining us? -->
+                    <div class="form-group">
+                        <label class="form-label">Will you be joining us? <span class="text-red-500">*</span></label>
+                        <div class="radio-group">
+                            <div class="radio-option">
+                                <input type="radio" id="attend-yes" name="attendance" value="accept" required>
+                                <label for="attend-yes">Delighted to accept</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="attend-no" name="attendance" value="decline" required>
+                                <label for="attend-no">Regretfully unable to attend</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Which events will you attend? -->
+                    <div class="form-group">
+                        <label class="form-label">Which events will you be attending? <span class="text-red-500">*</span></label>
+                        <div class="radio-group">
+                            <div class="radio-option">
+                                <input type="checkbox" id="event-nikah" name="events" value="nikah">
+                                <label for="event-nikah">Aqd Nikah</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="checkbox" id="event-party" name="events" value="party">
+                                <label for="event-party">Wedding Party</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Number of guests -->
+                    <div class="form-group">
+                        <label class="form-label">Number of guests in your party <span class="text-red-500">*</span></label>
+                        <select class="form-select" required>
+                            <option value="">Select number of guests</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5+</option>
+                        </select>
+                    </div>
+
+                    <!-- Full Name -->
+                    <div class="form-group">
+                        <label class="form-label">Full name (Principal guest) <span class="text-red-500">*</span></label>
+                        <input type="text" class="form-input" placeholder="Your full name" required>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="form-group">
+                        <label class="form-label">Email address <span class="text-red-500">*</span></label>
+                        <input type="email" class="form-input" placeholder="your@email.com" required>
+                    </div>
+
+                    <!-- Children -->
+                    <div class="form-group">
+                        <label class="form-label">Will any children be accompanying you?</label>
+                        <div class="radio-group">
+                            <div class="radio-option">
+                                <input type="radio" id="children-yes" name="children" value="yes">
+                                <label for="children-yes">Yes</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="children-no" name="children" value="no">
+                                <label for="children-no">No</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Message -->
+                    <div class="form-group">
+                        <label class="form-label">A message for the couple</label>
+                        <textarea class="form-textarea" placeholder="We should be delighted to hear from you."></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn-submit">
+                        Submit Response
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <section class="py-12 md:py-16">
+            <div class="container-inner">
+                <img class="mx-auto" src="./Calligraph [Vectorized].svg" alt="Wedding Rings" style="width: 120px; height: 120px;">
+                <div class="footer-names" style="color: #7F6A4B;">Majda & Yasser</div>
+                <div class="footer-date">12 June 2026</div>
+            </div>
+        </section>
+    </div>
+
+    <div class="h-3 w-full bg-stone-400">
+    </div>
+</body>
+</html>
+
+<script type="module">
+  document.addEventListener('DOMContentLoaded', function () {
+    ScrollReveal().reveal('.headline-fade', { 
+      delay: 300,
+      distance: '50px',
+      origin: 'bottom',
+      duration: 1000 
+    });
+
+    ScrollReveal().reveal('.cards-fade', { 
+      interval: 200, // Stagger effect for multiple items
+      rotate: { x: 20, z: 20 }
+    });
+    
+  });
+
+  import { animate, scroll } from "https://cdn.jsdelivr.net/npm/motion@12.38.0/+esm"
+
+scroll(
+    animate(
+        ".scrollblurred",
+        { 
+            // 0% scroll = 0px, 80% scroll = 100px, 100% scroll = stays 100px
+            filter: ["blur(0px)", "blur(100px)", "blur(100px)"] 
+        }
+    ),
+    {
+        // Maps the blur steps to 0%, 80%, and 100% of the scroll timeline
+        offset: [0, 0.8, 1] 
+    }
+)
+</script>
