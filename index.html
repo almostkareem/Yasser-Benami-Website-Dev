@@ -10,64 +10,246 @@
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div style="background: #FEF9F5;">
         <!-- VIDEO SECTION -->
         <section class="section-content w-full h-screen overflow-hidden">
             <video id="myVideo" muted playsinline 
-           class="absolute z-10 top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto -translate-x-1/2 -translate-y-1/2 object-cover cursor-pointer transition-opacity duration-[3000ms] ease-in-out">
-                <source src="./envelope-intro-v2.mp4" type="video/mp4">
+                class="absolute z-10 top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto -translate-x-1/2 -translate-y-1/2 object-cover cursor-pointer transition-opacity duration-[3000ms] ease-in-out">
+                <source src="./intro-video-new-CeLMqoNn.mp4" type="video/mp4">
             </video>
-            <div class="headline-fade container-inner opacity-0 transition-opacity duration-[3000ms] ease-in-out">
-                <div class="absolute left-0 top-0 w-32 lg:w-[250px] h-auto">
-                    <img src="./left-top-intro.webp" alt="">
+        </section>
+
+        <!-- Upper Section -->
+        <section class="w-full section-top">
+            <div class="flex items-center justify-center bg-[url('./1st_section_bg.webp')] bg-cover bg-center h-screen">
+                <img class="w-[85%] h-auto md:h-[90%] mt-16 md:mt-0" src="./1st Section Asset.svg" alt="Upper Decoration">
+            </div>
+        </section>
+
+        <!-- Countdown -->
+        <section class="w-full">
+            <div class="w-full relative overflow-hidden h-fit">
+                <div class="scrollblurred absolute -left-24 top-0 bottom-0 w-[160px]">
+                    <img class="w-full h-auto" src="./new_column_left.webp" alt="Pillar">
                 </div>
-                <div class="flex flex-col justify-center min-h-screen w-full px-4">
-                    <div class="event-card text-center">
-                    <h2 class="heading-section leading-1" style="color: #7F6A4B;">WE REQUEST THE PLEASURE OF YOURS TO CELEBRATE OUR WEDDING ON</h2>
-                    <div class="flex mx-auto mt-4 justify-center items-center gap-4">
-                        <p class="h-fit text-3xl text-amber-900 font-bold py-3 px-4 border-y-2 border-[#7F6A4B]" style="color: #7F6A4B;"> June </p>
-                        <p class="text-8xl text-amber-900 font-bold justify-center align-center pt-2 bg-gradient-to-b from-[#A78347] to-[#7F6A4B] bg-clip-text text-transparent"> 12 </p>
-                        <p class="h-fit text-3xl text-amber-900 font-bold py-3 px-4 border-y-2 border-[#7F6A4B]" style="color: #7F6A4B;"> 2026 </p>
-                    </div>
+                <div class="header-content justify-center flex flex-col items-center w-full h-full px-4 py-36">
+                    <!-- <div class="ornament-top">✦</div> -->
+                    
+                    <h1 class="heading-display text-center text-amber-900" style="color: #3A5042;">
+                        Countdown
+                    </h1>
+                    
+                    <p class="text-center sans-font text-sm tracking-widest text-amber-700 mt-2 mb-8" style="color: #A1A79F;">
+                        Until 2 July 2026
+                    </p>
 
-                    <p class="text-4xl text-amber-900 py-4 font-bold bg-gradient-to-b from-[#A78347] to-[#7F6A4B] bg-clip-text text-transparent"> Saturday </p>
+                    <!-- Countdown -->
+                    <div
+                    x-data="{
+                        targetDate: new Date('2026-07-02T23:59:59').getTime(),
+                        days: 0,
+                        hours: 0,
+                        minutes: 0,
+                        seconds: 0,
+                        updateCountdown() {
+                            const now = new Date().getTime();
+                            const distance = this.targetDate - now;
 
-                    <div class="max-w-xl mx-auto mt-4">
-                        <div class="event-details" style="color: #7F6A4B;">
-                            <div class="lg:text-2xl text-amber-900 text-md font-medium">to be held at</div>
+                            if (distance < 0) {
+                                // Timer reached zero
+                                this.days = this.hours = this.minutes = this.seconds = 0;
+                                return;
+                            }
+
+                            this.days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                            this.hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                            this.minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                            this.seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                        },
+                        init() {
+                            this.updateCountdown();
+                            setInterval(() => this.updateCountdown(), 1000);
+                        }
+                    }"
+                    class="flex justify-center lg:gap-6 gap-10 mb-8">
+                        <div class="countdown-box">
+                            <div class="countdown-number" x-text="days">00</div>
+                            <div class="countdown-label">Days</div>
                         </div>
-                        
-                        <div class="event-location font-bold z-20 bg-gradient-to-b from-[#A78347] to-[#7F6A4B] bg-clip-text text-transparent">La Grande Mosquée de Tànger</div>
-
-                        <!-- Mosque Image Placeholder -->
-                        <div class="h-48 -mt-10 mb-0 mx-auto max-w-xs z-0">
-                            <img class="mx-auto" src="./mosque-watercolor.webp" alt="">
+                        <div class="countdown-box">
+                            <div class="countdown-number" x-text="hours">00</div>
+                            <div class="countdown-label">Hours</div>
                         </div>
-                        
-                        <div class="-mt-16 lg:-mt-6" style="display: flex; justify-content: center;">
-                            <a href="./maincontent.html">
-                                <img src="./button (1).webp" alt="Button" class="mx-auto w-48 transition-transform duration-300 hover:scale-105">
-                            </a>
+                        <div class="countdown-box">
+                            <div class="countdown-number" x-text="minutes">00</div>
+                            <div class="countdown-label">Minutes</div>
+                        </div>
+                        <div class="countdown-box hidden">
+                            <div class="countdown-number animate-pulse" x-text="seconds">00</div>
+                            <div class="countdown-label">Seconds</div>
                         </div>
                     </div>
                 </div>
-                
-                <div class="absolute right-0 bottom-0 w-24 lg:w-[180px] h-auto">
-                    <img src="./right-bottom-intro.webp" alt="">
+                <div class="scrollblurred absolute -right-24 top-0 bottom-0 w-[160px]">
+                    <img class="w-full h-auto" src="./new_column_right.webp" alt="Pillar">
                 </div>
             </div>
         </section>
+
+        <!-- Location -->
+        <section class="section-content mt-20">
+            <div class="headline-fade container-inner">
+                <div class="relative event-card text-center">
+                    <!-- Venue Image Placeholder -->
+                    <div class="absolute -top-16 h-48 flex inset-x-0 mx-auto max-w-xs">
+                        <img class="mx-auto" src="./location_update.webp" alt="">
+                    </div>
+                    <div class="bg-[#F9F4EF] border border-stone-200 p-4 lg:p-8 rounded-2xl max-w-xl mx-auto">
+                        <p class="sans-font text-xs tracking-widest text-amber-700 uppercase mt-32 mb-4" style="color: #A1A79F;">WEDDING</p>
+                        <div class="event-location font-bold" style="color: #3A5042;">Qasr Al Anwar</div>
+
+                        <hr class="w-10 mx-auto my-4 border-stone-300">
+                        
+                        <div class="event-details" style="color: #A1A79F;">
+                            <div class="lg:text-xl text-md font-medium">2 July 2026</div>
+                            <div>6:00 PM</div>
+                        </div>
+
+                        <div style="display: flex; justify-content: center;">
+                            <a href="https://maps.app.goo.gl/m5L5HiXvN5nVewFv9" target="_blank" class="event-link">View on Map →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dress Code -->
+        <section class="section-content">
+            <div class="headline-fade container-inner">
+                <div class="event-location text-center font-bold mb-4" style="color: #3A5042;">Dress Code</div>
+                <div class="relative event-card text-center">
+                    <!-- Venue Image Placeholder -->
+                    <div class="relative bg-[#F9F4EF] border border-stone-200 p-4 lg:p-8 rounded-2xl max-w-xl mx-auto">
+                        <div class="h-auto flex inset-x-0 mx-auto max-w-xs">
+                            <img class="mx-auto" src="./dress_code.webp" alt="">
+                        </div>
+                        <div class="absolute -left-6 -top-6 w-16 lg:w-24 h-auto">
+                            <img src="./dc_left_top.webp" alt="">
+                        </div>
+                        <div class="absolute -left-6 -bottom-4 w-16 lg:w-32 h-auto">
+                            <img src="./dc_left_buttm.webp" alt="">
+                        </div>
+                        <div class="absolute -right-4 -bottom-4 w-12 lg:w-20 h-auto">
+                            <img src="./dc_right_bottom.webp" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Form -->
+        <section class="relative section-content mt-20 curtain-container overflow-hidden">
+            <!-- Left Curtain -->
+            <div class="curtain-left absolute inset-x-0 mx-auto top-0 w-40 h-auto" style="transform: translateX(0)">
+                <img src="./Curtain_Left.webp" alt="">
+            </div>
+
+            <!-- Right Curtain -->
+            <div class="curtain-right absolute inset-x-0 mx-auto top-0 w-40 h-auto" style="transform: translateX(0)">
+                <img src="./Curtain_Right.webp" alt="">
+            </div>
+
+            <!-- Middle Curtain -->
+            <div class="curtain-middle absolute inset-x-0 top-0 mx-auto w-80 lg:w-20 h-auto opacity-50">
+                <img src="./Curtain_Middle.webp" alt="">
+            </div>
+            
+            <div class="headline-fade container-inner">
+                <div class="relative event-card text-center">
+                    <!-- Form -->
+                    <div class="p-2 lg:p-2 rounded-2xl max-w-xl mx-auto">
+                        <div class="text-7xl font-bold" style="color: #3A5042;">RSVP</div>
+                        <div class=" mx-auto my-6 w-40 h-auto">
+                            <img src="./form_divider_1.webp" alt="">
+                        </div>
+
+                        <p class="sans-font text-md text-amber-700 text-center uppercase mt-4 mb-4" style="color: #A1A79F;">MERCI DE BIEN VOULOIR CONFIRMER VOTRE PRÉSENCE</p>
+
+                        <form id="rsvpForm" class="space-y-8">
+                            <!-- Radio Option 1 -->
+                            <label class="flex items-start gap-4 cursor-pointer">
+                                <input 
+                                    type="radio" 
+                                    name="attendance" 
+                                    value="present" 
+                                    class="w-6 h-6 cursor-pointer accent-gray-500" 
+                                    style="accent-color: #3A5042;">
+                                <span class="uppercase text-sm leading-relaxed">NOUS AURONS LE PLAISIR<br>D'ÊTRE PRÉSENTS</span>
+                            </label>
+            
+                            <!-- Radio Option 2 -->
+                            <label class="flex items-start gap-4 cursor-pointer">
+                                <input 
+                                    type="radio" 
+                                    name="attendance" 
+                                    value="absent" 
+                                    class="w-6 h-6 cursor-pointer accent-gray-400" 
+                                    style="accent-color: #3A5042;">
+                                <span class="uppercase text-sm leading-relaxed">NOUS REGRETTONS DE NE<br>PAS POUVOIR ÊTRE PRÉSENTS</span>
+                            </label>
+            
+                            <!-- Name Input -->
+                            <div class="pt-6">
+                                <label class="block uppercase text-sm mb-2">NOM ET PRÉNOM</label>
+                                <input 
+                                    type="text" 
+                                    id="fullName"
+                                    name="fullName"
+                                    placeholder="Jean Dupont" 
+                                    class="w-full text-center bg-transparent border-b border-gray-400 outline-none pb-1 placeholder:text-gray-300"
+                                    required>
+                            </div>
+            
+                            <!-- Submit -->
+                            <div class="flex justify-center pt-8">
+                                <button 
+                                    type="submit" 
+                                    class="border-2 border-gray-400 px-12 py-3 uppercase tracking-widest hover:bg-[#3A5042] hover:text-white hover:border-[#3A5042] transition-colors">
+                                    SUBMIT
+                                </button>
+                            </div>
+
+                            <div class=" mx-auto my-6 w-40 h-auto">
+                                <img src="./form_divider_final.webp" alt="">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <section class="section-content">
+            <div class="headline-fade container-inner">
+                <div class="h-auto flex inset-x-0 mx-auto w-48">
+                    <img class="mx-auto" src="./footer.svg" alt="">
+                </div>
+            </div>
+        </section>
+        <div class="w-full h-2 bg-[#B3AB9B]"></div>
     </div>
 </body>
 </html>
 
 <script>
     const video = document.getElementById('myVideo');
-    // Select the .container-inner element
     const containerInner = document.querySelector('.container-inner');
+    const sectionTop = document.querySelector('.section-top');
+    const videoSection = document.querySelector('.section-content');
 
-    // 1. Handle the click-to-pause logic from before
+    // 1. Handle click to play
     video.addEventListener('click', () => {
         if (video.paused) {
             video.play();
@@ -76,15 +258,90 @@
         }
     });
 
-    // 2. Handle the fade-out, hide, and showing the container when finished
+    // 2. Handle video end: fade out, scroll to section-top, then hide
     video.addEventListener('ended', () => {
-        // Start the 1-second fade out using Tailwind's opacity-0
-        video.classList.add('opacity-20', '-z-20');
+        // Start fade-out animation
+        video.classList.add('opacity-0');
+        videoSection.classList.add('opacity-0');
 
-        // Reveal the .container-inner by swapping opacity classes
+        // Reveal the .container-inner
         if (containerInner) {
             containerInner.classList.remove('opacity-0');
             containerInner.classList.add('opacity-100');
         }
+
+        // Wait for the fade-out animation to complete (3 seconds), then scroll
+        setTimeout(() => {
+            if (sectionTop) {
+
+                // Hide the video section after scrolling starts
+                videoSection.classList.add('hidden');
+            }
+        }, 0); // Matches the duration-[3000ms] transition
+    }); 
+
+    const form = document.getElementById('rsvpForm');
+ 
+        form.addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent default form submission
+ 
+            // Get form values
+            const attendance = document.querySelector('input[name="attendance"]:checked');
+            const fullName = document.getElementById('fullName').value.trim();
+ 
+            // Validate inputs
+            if (!attendance) {
+                alert('Veuillez sélectionner une option de présence');
+                return;
+            }
+ 
+            if (!fullName) {
+                alert('Veuillez entrer votre nom et prénom');
+                return;
+            }
+ 
+            // Create WhatsApp message
+            const attendanceText = attendance.value === 'present' 
+                ? 'NOUS AURONS LE PLAISIR D\'ÊTRE PRÉSENTS' 
+                : 'NOUS REGRETTONS DE NE PAS POUVOIR ÊTRE PRÉSENTS';
+ 
+            const message = `Nom: ${fullName}%0AProof d'assistance: ${attendanceText}`;
+ 
+            // Replace with your WhatsApp number (format: country code + number, e.g., 33612345678)
+            const whatsappNumber = '212652202561'; // Change this to your WhatsApp number
+ 
+            // WhatsApp URL
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
+ 
+            // Redirect to WhatsApp
+            window.open(whatsappURL, '_blank');
+        });
+
+    // Curtain animation
+    const curtainContainer = document.querySelector('.curtain-container');
+    const leftCurtain = document.querySelector('.curtain-left');
+    const rightCurtain = document.querySelector('.curtain-right');
+    const middleCurtain = document.querySelector('.curtain-middle');
+
+    const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+        const rect = entry.boundingClientRect;
+        const viewportHeight = window.innerHeight;
+
+        // Calculate raw progress (0 to 1 from bottom to halfway)
+        const rawProgress = (viewportHeight - rect.top) / (viewportHeight / 2);
+        
+        // Start animation at 20% scroll, end at 120% scroll
+        // Map: 20% → 0 (animation starts), 120% → 1 (animation ends)
+        const progress = Math.max(0, Math.min(1, (rawProgress - 0.2) / 0.8));
+
+        // Animate curtains opening
+        rightCurtain.style.transform = `translateX(${progress * 220}px)`;
+        leftCurtain.style.transform = `translateX(${-progress * 220}px)`;
+        }
     });
+    }, { threshold: Array.from({ length: 11 }, (_, i) => i / 10) });
+
+    observer.observe(curtainContainer);
 </script>

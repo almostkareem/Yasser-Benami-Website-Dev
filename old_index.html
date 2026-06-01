@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Majda & Yasser - Wedding 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script type="module" src="./main.js" defer></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div style="background: #FEF9F5;">
+        <!-- VIDEO SECTION -->
+        <section class="section-content w-full h-screen overflow-hidden">
+            <video id="myVideo" muted playsinline 
+           class="absolute z-10 top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto -translate-x-1/2 -translate-y-1/2 object-cover cursor-pointer transition-opacity duration-[3000ms] ease-in-out">
+                <source src="./envelope-intro-v2.mp4" type="video/mp4">
+            </video>
+            <div class="headline-fade container-inner opacity-0 transition-opacity duration-[3000ms] ease-in-out">
+                <div class="absolute left-0 top-0 w-32 lg:w-[250px] h-auto">
+                    <img src="./left-top-intro.webp" alt="">
+                </div>
+                <div class="flex flex-col justify-center min-h-screen w-full px-4">
+                    <div class="event-card text-center">
+                    <h2 class="heading-section leading-1" style="color: #7F6A4B;">WE REQUEST THE PLEASURE OF YOURS TO CELEBRATE OUR WEDDING ON</h2>
+                    <div class="flex mx-auto mt-4 justify-center items-center gap-4">
+                        <p class="h-fit text-3xl text-amber-900 font-bold py-3 px-4 border-y-2 border-[#7F6A4B]" style="color: #7F6A4B;"> June </p>
+                        <p class="text-8xl text-amber-900 font-bold justify-center align-center pt-2 bg-gradient-to-b from-[#A78347] to-[#7F6A4B] bg-clip-text text-transparent"> 12 </p>
+                        <p class="h-fit text-3xl text-amber-900 font-bold py-3 px-4 border-y-2 border-[#7F6A4B]" style="color: #7F6A4B;"> 2026 </p>
+                    </div>
+
+                    <p class="text-4xl text-amber-900 py-4 font-bold bg-gradient-to-b from-[#A78347] to-[#7F6A4B] bg-clip-text text-transparent"> Saturday </p>
+
+                    <div class="max-w-xl mx-auto mt-4">
+                        <div class="event-details" style="color: #7F6A4B;">
+                            <div class="lg:text-2xl text-amber-900 text-md font-medium">to be held at</div>
+                        </div>
+                        
+                        <div class="event-location font-bold z-20 bg-gradient-to-b from-[#A78347] to-[#7F6A4B] bg-clip-text text-transparent">La Grande Mosquée de Tànger</div>
+
+                        <!-- Mosque Image Placeholder -->
+                        <div class="h-48 -mt-10 mb-0 mx-auto max-w-xs z-0">
+                            <img class="mx-auto" src="./mosque-watercolor.webp" alt="">
+                        </div>
+                        
+                        <div class="-mt-16 lg:-mt-6" style="display: flex; justify-content: center;">
+                            <a href="./maincontent.html">
+                                <img src="./button (1).webp" alt="Button" class="mx-auto w-48 transition-transform duration-300 hover:scale-105">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="absolute right-0 bottom-0 w-24 lg:w-[180px] h-auto">
+                    <img src="./right-bottom-intro.webp" alt="">
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
+
+<script>
+    const video = document.getElementById('myVideo');
+    // Select the .container-inner element
+    const containerInner = document.querySelector('.container-inner');
+
+    // 1. Handle the click-to-pause logic from before
+    video.addEventListener('click', () => {
+        if (video.paused) {
+            video.play();
+        } else {
+            video.pause();
+        }
+    });
+
+    // 2. Handle the fade-out, hide, and showing the container when finished
+    video.addEventListener('ended', () => {
+        // Start the 1-second fade out using Tailwind's opacity-0
+        video.classList.add('opacity-20', '-z-20');
+
+        // Reveal the .container-inner by swapping opacity classes
+        if (containerInner) {
+            containerInner.classList.remove('opacity-0');
+            containerInner.classList.add('opacity-100');
+        }
+    });
+</script>
