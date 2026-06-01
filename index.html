@@ -14,7 +14,7 @@
 <body>
     <div style="background: #FEF9F5;">
         <!-- VIDEO SECTION -->
-        <section class="section-content w-full h-screen overflow-hidden">
+        <section id="videoSection" class=" section-content w-full h-screen overflow-hidden">
             <video id="myVideo" muted playsinline 
                 class="absolute z-10 top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto -translate-x-1/2 -translate-y-1/2 object-cover cursor-pointer transition-opacity duration-[3000ms] ease-in-out">
                 <source src="./intro-video-new-CeLMqoNn.mp4" type="video/mp4">
@@ -150,7 +150,7 @@
         </section>
 
         <!-- Form -->
-        <section class="relative section-content mt-20 curtain-container overflow-hidden">
+        <section class="relative section-content mt-20 curtain-container overflow-hidden max-w-6xl mx-auto">
             <!-- Left Curtain -->
             <div class="curtain-left absolute inset-x-0 mx-auto top-0 w-40 h-auto" style="transform: translateX(0)">
                 <img src="./Curtain_Left.webp" alt="">
@@ -169,7 +169,7 @@
             <div class="headline-fade container-inner">
                 <div class="relative event-card text-center">
                     <!-- Form -->
-                    <div class="p-2 lg:p-2 rounded-2xl max-w-xl mx-auto">
+                    <div class="p-2 lg:p-2 rounded-2xl max-w-sm mx-auto">
                         <div class="text-7xl font-bold" style="color: #3A5042;">RSVP</div>
                         <div class=" mx-auto my-6 w-40 h-auto">
                             <img src="./form_divider_1.webp" alt="">
@@ -186,7 +186,7 @@
                                     value="present" 
                                     class="w-6 h-6 cursor-pointer accent-gray-500" 
                                     style="accent-color: #3A5042;">
-                                <span class="uppercase text-sm leading-relaxed">NOUS AURONS LE PLAISIR<br>D'ÊTRE PRÉSENTS</span>
+                                <span class="uppercase text-sm">NOUS AURONS LE PLAISIR<br>D'ÊTRE PRÉSENTS</span>
                             </label>
             
                             <!-- Radio Option 2 -->
@@ -197,7 +197,7 @@
                                     value="absent" 
                                     class="w-6 h-6 cursor-pointer accent-gray-400" 
                                     style="accent-color: #3A5042;">
-                                <span class="uppercase text-sm leading-relaxed">NOUS REGRETTONS DE NE<br>PAS POUVOIR ÊTRE PRÉSENTS</span>
+                                <span class="uppercase text-sm">NOUS REGRETTONS DE NE<br>PAS POUVOIR ÊTRE PRÉSENTS</span>
                             </label>
             
                             <!-- Name Input -->
@@ -245,40 +245,23 @@
 
 <script>
     const video = document.getElementById('myVideo');
-    const containerInner = document.querySelector('.container-inner');
+    const videoSection = document.getElementById('videoSection');
     const sectionTop = document.querySelector('.section-top');
-    const videoSection = document.querySelector('.section-content');
 
-    // 1. Handle click to play
+    // Click to play
     video.addEventListener('click', () => {
-        if (video.paused) {
-            video.play();
-        } else {
-            video.pause();
-        }
+        video.play();
     });
 
-    // 2. Handle video end: fade out, scroll to section-top, then hide
+    // When video ends
     video.addEventListener('ended', () => {
-        // Start fade-out animation
-        video.classList.add('opacity-0');
-        videoSection.classList.add('opacity-0');
-
-        // Reveal the .container-inner
-        if (containerInner) {
-            containerInner.classList.remove('opacity-0');
-            containerInner.classList.add('opacity-100');
-        }
-
-        // Wait for the fade-out animation to complete (3 seconds), then scroll
+        
+        // Scroll to section-top after fade completes
         setTimeout(() => {
-            if (sectionTop) {
-
-                // Hide the video section after scrolling starts
-                videoSection.classList.add('hidden');
-            }
-        }, 0); // Matches the duration-[3000ms] transition
-    }); 
+            // sectionTop.scrollIntoView({ behavior: 'smooth' });
+            videoSection.classList.add('hidden');
+        }, 1000);
+    });
 
     const form = document.getElementById('rsvpForm');
  
