@@ -14,17 +14,16 @@
 <body>
     <div style="background: #FEF9F5;">
         <!-- VIDEO SECTION -->
-        <section id="videoSection" class="w-full h-screen overflow-hidden">
-            <video id="myVideo" muted playsinline 
-                class="w-full h-full object-cover cursor-pointer">
-                <source src="https://raw.githubusercontent.com/JoschaGabriel/Yasser-Benami-Website-Dev/main/intro-video-new-CeLMqoNn.mp4" type="video/mp4">
-            </video>
-        </section>
+        <sectionnn id="videoSection" class="w-full h-screen">
+            <videoo id="myVideo" muted playsinline class="w-full h-full object-cover cursor-pointer">
+                <sourcee src="https://raw.githubusercontent.com/JoschaGabriel/Yasser-Benami-Website-Dev/main/intro-video-new-CeLMqoNn.mp4" type="video/mp4">
+            </videoo>
+        </sectionnn>
 
         <!-- Upper Section -->
         <section class="w-full section-top">
             <div class="flex items-center justify-center bg-[url('./1st_section_bg.webp')] bg-cover bg-center h-screen">
-                <img class="w-[85%] h-auto md:h-[90%] mt-16 md:mt-0" src="./1st Section Asset.svg" alt="Upper Decoration">
+                <img class="w-[85%] h-auto md:h-[90%] mt-16 md:mt-0" src="./1st_Section_Asset_update.svg" alt="Upper Decoration">
             </div>
         </section>
 
@@ -37,18 +36,18 @@
                 <div class="header-content justify-center flex flex-col items-center w-full h-full px-4 py-36">
                     <!-- <div class="ornament-top">✦</div> -->
                     
-                    <h1 class="heading-display text-center text-amber-900" style="color: #3A5042;">
+                    <h1 class="heading-display text-center text-amber-900 text-5xl mb-8" style="color: #3A5042;">
                         Countdown
                     </h1>
                     
-                    <p class="text-center sans-font text-sm tracking-widest text-amber-700 mt-2 mb-8" style="color: #A1A79F;">
+                    <!-- <p class="text-center sans-font text-sm tracking-widest text-amber-700 mt-2 mb-8" style="color: #A1A79F;">
                         Until 2 July 2026
-                    </p>
+                    </p> -->
 
                     <!-- Countdown -->
                     <div
                     x-data="{
-                        targetDate: new Date('2026-07-02T23:59:59').getTime(),
+                        targetDate: new Date('2026-07-02T17:59:59').getTime(),
                         days: 0,
                         hours: 0,
                         minutes: 0,
@@ -73,22 +72,22 @@
                             setInterval(() => this.updateCountdown(), 1000);
                         }
                     }"
-                    class="flex justify-center lg:gap-6 gap-10 mb-8">
+                    class="flex justify-center lg:gap-6 gap-4 mb-8">
                         <div class="countdown-box">
                             <div class="countdown-number" x-text="days">00</div>
-                            <div class="countdown-label">Days</div>
+                            <div class="countdown-label">Jours</div>
                         </div>
                         <div class="countdown-box">
                             <div class="countdown-number" x-text="hours">00</div>
-                            <div class="countdown-label">Hours</div>
+                            <div class="countdown-label">Heures</div>
                         </div>
                         <div class="countdown-box">
                             <div class="countdown-number" x-text="minutes">00</div>
                             <div class="countdown-label">Minutes</div>
                         </div>
-                        <div class="countdown-box hidden">
+                        <div class="countdown-box">
                             <div class="countdown-number animate-pulse" x-text="seconds">00</div>
-                            <div class="countdown-label">Seconds</div>
+                            <div class="countdown-label">Secondes</div>
                         </div>
                     </div>
                 </div>
@@ -99,26 +98,28 @@
         </section>
 
         <!-- Location -->
-        <section class="section-content mt-20">
+        <section class="section-content mt-32">
             <div class="headline-fade container-inner">
                 <div class="relative event-card text-center">
                     <!-- Venue Image Placeholder -->
-                    <div class="absolute -top-16 h-48 flex inset-x-0 mx-auto max-w-xs">
+                    <div class="absolute -top-16 h-48 md:h-56 flex inset-x-0 mx-auto w-xs md:w-5xl">
                         <img class="mx-auto" src="./location_update.webp" alt="">
                     </div>
-                    <div class="bg-[#F9F4EF] border border-stone-200 p-4 lg:p-8 rounded-2xl max-w-xl mx-auto">
-                        <p class="sans-font text-xs tracking-widest text-amber-700 uppercase mt-32 mb-4" style="color: #A1A79F;">WEDDING</p>
-                        <div class="event-location font-bold" style="color: #3A5042;">Qasr Al Anwar</div>
+                    <div class="bg-[#F9F4EF] border border-stone-200 p-4 lg:p-8 mt-0 md:mt-4 rounded-2xl max-w-xl mx-auto">
+                        <p class="sans-font text-xs tracking-widest text-amber-700 uppercase mt-32 md:mt-40 mb-4" style="color: #A1A79F;">La célébration aura lieu à’</p>
+                        <div class="event-location text-4xl" style="color: #3A5042;">Qasr Al Anwar</div>
 
                         <hr class="w-10 mx-auto my-4 border-stone-300">
                         
-                        <div class="event-details" style="color: #A1A79F;">
+                        <!-- <div class="event-details" style="color: #A1A79F;">
                             <div class="lg:text-xl text-md font-medium">2 July 2026</div>
                             <div>6:00 PM</div>
-                        </div>
+                        </div> -->
 
                         <div style="display: flex; justify-content: center;">
-                            <a href="https://maps.app.goo.gl/m5L5HiXvN5nVewFv9" target="_blank" class="event-link">View on Map →</a>
+                            <a href="https://maps.app.goo.gl/m5L5HiXvN5nVewFv9" target="_blank" class="event-link flex gap-2"> 
+                                <img class="w-5 h-auto" src="./location_icon (1).svg" alt="Location Icon">
+                                View on Map →</a>
                         </div>
                     </div>
                 </div>
@@ -128,7 +129,7 @@
         <!-- Dress Code -->
         <section class="section-content">
             <div class="headline-fade container-inner">
-                <div class="event-location text-center font-bold mb-4" style="color: #3A5042;">Dress Code</div>
+                <div class="event-location text-center text-5xl mb-4" style="color: #3A5042;">Dress Code</div>
                 <div class="relative event-card text-center">
                     <!-- Venue Image Placeholder -->
                     <div class="relative bg-[#F9F4EF] border border-stone-200 p-4 lg:p-8 rounded-2xl max-w-xl mx-auto">
@@ -170,7 +171,7 @@
                 <div class="relative event-card text-center">
                     <!-- Form -->
                     <div class="p-2 lg:p-2 rounded-2xl max-w-sm mx-auto">
-                        <div class="text-7xl font-bold" style="color: #3A5042;">RSVP</div>
+                        <div class="text-7xl event-location" style="color: #3A5042;">RSVP</div>
                         <div class=" mx-auto my-6 w-40 h-auto">
                             <img src="./form_divider_1.webp" alt="">
                         </div>
@@ -233,8 +234,8 @@
         <!-- Footer -->
         <section class="section-content">
             <div class="headline-fade container-inner">
-                <div class="h-auto flex inset-x-0 mx-auto w-48">
-                    <img class="mx-auto" src="./footer.svg" alt="">
+                <div class="h-auto flex inset-x-0 mx-auto w-full max-w-4xl">
+                    <img class="mx-auto" src="./footer_2.svg" alt="">
                 </div>
             </div>
         </section>

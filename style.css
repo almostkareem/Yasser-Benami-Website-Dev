@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Prata&family=Lora:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Prata&family=Lora:wght@400;500;600&family=Montserrat:wght@300;400;500;600&family=Pinyon+Script&family=Libre+Baskerville:wght@400;700&display=swap');
         * {
             margin: 0;
             padding: 0;
@@ -13,7 +12,7 @@
         }
 
         .display-font {
-            font-family: 'Prata', serif;
+            font-family: 'Pinyon Script', cursive;
         }
 
         .sans-font {
@@ -22,7 +21,7 @@
 
         .container-inner {
             width: 100%;
-            max-width: 320px;
+            max-width: 350px;
             margin: 0 auto;
             padding: 0 16px;
         }
@@ -68,7 +67,7 @@
         }
 
         .countdown-number {
-            font-family: 'Prata', serif;
+            font-family: 'Pinyon Script', cursive;
             font-size: 48px;
             font-weight: bold;
             color: #3A5042;
@@ -134,7 +133,7 @@
 
         /* Typography scales */
         .heading-display {
-            font-family: 'Prata', serif;
+            font-family: 'Pinyon Script', cursive;
             font-size: 32px;
             line-height: 1.2;
             margin-bottom: 4px;
@@ -148,7 +147,7 @@
         }
 
         .heading-section {
-            font-family: 'Prata', serif;
+            font-family: 'Pinyon Script', cursive;
             font-size: 28px;
             line-height: 1.2;
             margin-bottom: 4px;
@@ -276,7 +275,7 @@
         }
 
         .event-card-title {
-            font-family: 'Prata', serif;
+            font-family: 'Pinyon Script', cursive;
             font-size: 20px;
             color: #7F6A4B;
             margin-bottom: 12px;
@@ -289,7 +288,7 @@
         }
 
         .event-location {
-            font-family: 'Prata', serif;
+            font-family: 'Pinyon Script', cursive;
             font-size: 24px;
             color: #3a3a3a;
             margin-bottom: 12px;
@@ -348,7 +347,7 @@
         }
 
         .dress-code-label {
-            font-family: 'Prata', serif;
+            font-family: 'Pinyon Script', cursive;
             font-size: 18px;
             color: #3a3a3a;
             margin-bottom: 12px;
@@ -356,7 +355,7 @@
 
         /* Footer */
         .footer-names {
-            font-family: 'Prata', serif;
+            font-family: 'Pinyon Script', cursive;
             font-size: 28px;
             color: #8b7355;
             text-align: center;
