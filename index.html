@@ -342,42 +342,42 @@
         }, 1000);
     }); 
 
-    const form = document.getElementById('rsvpForm');
+    // const form = document.getElementById('rsvpForm');
  
-        form.addEventListener('submit', function(e) {
-            e.preventDefault(); // Prevent default form submission
+    //     form.addEventListener('submit', function(e) {
+    //         e.preventDefault(); // Prevent default form submission
  
-            // Get form values
-            const attendance = document.querySelector('input[name="attendance"]:checked');
-            const fullName = document.getElementById('fullName').value.trim();
+    //         // Get form values
+    //         const attendance = document.querySelector('input[name="attendance"]:checked');
+    //         const fullName = document.getElementById('fullName').value.trim();
  
-            // Validate inputs
-            if (!attendance) {
-                alert('Veuillez sélectionner une option de présence');
-                return;
-            }
+    //         // Validate inputs
+    //         if (!attendance) {
+    //             alert('Veuillez sélectionner une option de présence');
+    //             return;
+    //         }
  
-            if (!fullName) {
-                alert('Veuillez entrer votre nom et prénom');
-                return;
-            }
+    //         if (!fullName) {
+    //             alert('Veuillez entrer votre nom et prénom');
+    //             return;
+    //         }
  
-            // Create WhatsApp message
-            const attendanceText = attendance.value === 'present' 
-                ? 'NOUS AURONS LE PLAISIR D\'ÊTRE PRÉSENTS' 
-                : 'NOUS REGRETTONS DE NE PAS POUVOIR ÊTRE PRÉSENTS';
+    //         // Create WhatsApp message
+    //         const attendanceText = attendance.value === 'present' 
+    //             ? 'NOUS AURONS LE PLAISIR D\'ÊTRE PRÉSENTS' 
+    //             : 'NOUS REGRETTONS DE NE PAS POUVOIR ÊTRE PRÉSENTS';
  
-            const message = `Nom: ${fullName}%0AProof d'assistance: ${attendanceText}`;
+    //         const message = `Nom: ${fullName}%0AProof d'assistance: ${attendanceText}`;
  
-            // Replace with your WhatsApp number (format: country code + number, e.g., 33612345678)
-            const whatsappNumber = '212652202561'; // Change this to your WhatsApp number
+    //         // Replace with your WhatsApp number (format: country code + number, e.g., 33612345678)
+    //         const whatsappNumber = '212652202561'; // Change this to your WhatsApp number
  
-            // WhatsApp URL
-            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
+    //         // WhatsApp URL
+    //         const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
  
-            // Redirect to WhatsApp
-            window.open(whatsappURL, '_blank');
-        });
+    //         // Redirect to WhatsApp
+    //         window.open(whatsappURL, '_blank');
+    //     });
 
     // Curtain animation
     const curtainContainer = document.querySelector('.curtain-container');
