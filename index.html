@@ -14,11 +14,11 @@
 <body>
     <div style="background: #FEF9F5;">
         <!-- VIDEO SECTION -->
-        <sectionnn id="videoSection" class="w-full h-screen">
-            <videoo id="myVideo" muted playsinline class="w-full h-full object-cover cursor-pointer">
-                <sourcee src="https://raw.githubusercontent.com/JoschaGabriel/Yasser-Benami-Website-Dev/main/intro-video-new-CeLMqoNn.mp4" type="video/mp4">
-            </videoo>
-        </sectionnn>
+        <section id="videoSection" class="w-full h-screen">
+            <video id="myVideo" muted playsinline class="w-full h-full object-cover cursor-pointer">
+                <source src="./intro-video-new-CeLMqoNn (1).mp4" type="video/mp4">
+            </video>
+        </section>
 
         <!-- Upper Section -->
         <section class="w-full section-top">
@@ -248,21 +248,28 @@
     const video = document.getElementById('myVideo');
     const videoSection = document.getElementById('videoSection');
     const sectionTop = document.querySelector('.section-top');
-
+    
+    // Lock scroll until video ends
+    document.body.style.overflow = 'hidden';
+    
     // Click to play
     video.addEventListener('click', () => {
         video.play();
     });
-
+    
     // When video ends
     video.addEventListener('ended', () => {
+        // Unlock scrolling
+        document.body.style.overflow = 'auto';
         
-        // Scroll to section-top after fade completes
+        // Scroll to section-top smoothly
+        sectionTop.scrollIntoView({ behavior: 'smooth' });
+        
+        // Hide video section after fade completes
         setTimeout(() => {
-            // sectionTop.scrollIntoView({ behavior: 'smooth' });
             videoSection.classList.add('hidden');
         }, 1000);
-    });
+    }); 
 
     const form = document.getElementById('rsvpForm');
  
