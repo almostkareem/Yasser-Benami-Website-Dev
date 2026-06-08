@@ -13,6 +13,17 @@
 
 <body>
     <div style="background: #FEF9F5;">
+        <!-- Audio autoplay -->
+        <audio id="myAudio" autoplay muted loop>
+            <source src="./MaxRichter,DanielHope,KonzerthausKammerorchesterBerlin-Spring1-2012.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+        </audio>
+
+        <!-- The Absolute Mute/Unmute Button -->
+        <button id="muteBtn" class="absolute-mute-button">
+        🔇 Mute
+        </button>
+        
         <!-- VIDEO SECTION -->
         <section id="videoSection" class="w-full h-screen bg-[url('./videoframe_0(1).webp')] bg-cover bg-center">
             <video id="myVideo" muted playsinline class="w-full h-full object-cover cursor-pointer">
@@ -23,7 +34,7 @@
         <!-- Upper Section -->
         <section class="w-full section-top">
             <div class="flex items-center justify-center bg-[url('./1st_section_bg.webp')] bg-cover bg-center h-screen">
-                <img class="w-[85%] h-auto md:h-[90%] mt-16 md:mt-0" src="./1st_Section_Asset_update.svg" alt="Upper Decoration">
+                <img class="w-[85%] h-auto md:h-[90%] mt-16 md:mt-0" src="./1st_Section_Asset_update2.svg" alt="Upper Decoration">
             </div>
         </section>
 
@@ -106,8 +117,9 @@
                         <img class="mx-auto" src="./location_update.webp" alt="">
                     </div>
                     <div class="bg-[#F9F4EF] border border-stone-200 p-4 lg:p-8 mt-0 md:mt-4 rounded-2xl max-w-xl mx-auto">
-                        <p class="sans-font text-xs tracking-widest text-amber-700 uppercase mt-32 md:mt-40 mb-4" style="color: #A1A79F;">La célébration aura lieu à’</p>
+                        <p class="sans-font text-xs tracking-widest text-amber-700 uppercase mt-32 md:mt-40 mb-4 md:mb-8" style="color: #A1A79F;">La célébration aura lieu à</p>
                         <div class="event-location text-4xl" style="color: #3A5042;">Qasr Al Anwar</div>
+                        <p class="sans-font text-xs tracking-widest text-amber-700 uppercase mt-0 md:mt-1 mb-4" style="color: #A1A79F;">Tanger</p>
 
                         <hr class="w-10 mx-auto my-4 border-stone-300">
                         
@@ -129,7 +141,7 @@
         <!-- Dress Code -->
         <section class="section-content">
             <div class="headline-fade container-inner">
-                <div class="event-location text-center text-5xl mb-4" style="color: #3A5042;">Dress Code</div>
+                <div class="heading-display text-center text-5xl mb-4" style="color: #3A5042;">Dress Code</div>
                 <div class="relative event-card text-center">
                     <!-- Venue Image Placeholder -->
                     <div class="relative bg-[#F9F4EF] border border-stone-200 p-4 lg:p-8 rounded-2xl max-w-xl mx-auto">
@@ -171,7 +183,7 @@
                 <div class="relative event-card text-center">
                     <!-- Form -->
                     <div class="p-2 lg:p-2 rounded-2xl max-w-sm mx-auto">
-                        <div class="text-7xl event-location" style="color: #3A5042;">RSVP</div>
+                        <div class="text-7xl heading-display" style="color: #3A5042;">RSVP</div>
                         <div class=" mx-auto my-6 w-40 h-auto">
                             <img src="./form_divider_1.webp" alt="">
                         </div>
@@ -343,13 +355,41 @@
         document.body.style.overflow = 'auto';
         
         // Scroll to section-top smoothly
-        sectionTop.scrollIntoView({ behavior: 'smooth' });
+        // sectionTop.scrollIntoView({ behavior: 'smooth' });
         
         // Hide video section after fade completes
-        setTimeout(() => {
-            videoSection.classList.add('hidden');
-        }, 1000);
+        // setTimeout(() => {
+        //     videoSection.classList.add('hidden');
+        // }, 1000);
     }); 
+
+    // Audio
+    const audio = document.getElementById('myAudio');
+    const muteBtn = document.getElementById('muteBtn');
+
+    // Step A: Standard button toggle logic
+    muteBtn.addEventListener('click', function() {
+        if (audio.muted) {
+        audio.muted = false;
+        muteBtn.innerText = "🔇 Mute";
+        audio.play().catch(err => console.log("Playback error:", err));
+        } else {
+        audio.muted = true;
+        muteBtn.innerText = "🔊 Unmute";
+        }
+    });
+
+    // Step B: The Browser Autoplay Bypass Trick
+    // If the browser blocks the unmuted sound at page load, 
+    // this listener plays it the exact split-second the user clicks anywhere.
+    document.addEventListener('click', function() {
+        if (audio.paused) {
+        audio.muted = false;
+        audio.play().catch(err => console.log("Autoplay blocked until click."));
+        muteBtn.innerText = "🔇 Mute";
+        }
+    }, { once: true }); // "once: true" removes the listener immediately after the first execution
+
 
     // Form Whatsapp
 

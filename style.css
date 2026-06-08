@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Prata&family=Lora:wght@400;500;600&family=Montserrat:wght@300;400;500;600&family=Pinyon+Script&family=Libre+Baskerville:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prata&family=Lora:wght@400;500;600&family=Montserrat:wght@300;400;500;600&family=Pinyon+Script&family=Libre+Baskerville:wght@400;700&display=swap&family=Cookie&display=swap');
         * {
             margin: 0;
             padding: 0;
@@ -31,6 +31,27 @@
                 max-width: 920px;
                 padding: 0 32px;
             }
+        }
+
+        .absolute-mute-button {
+            position: fixed;      /* Fixes it relative to the screen viewport */
+            bottom: 20px;         /* Distance from the bottom edge */
+            right: 20px;          /* Distance from the right edge */
+            z-index: 9999;        /* Ensures it sits on top of all other elements */
+            padding: 7px 10px;
+            background-color: #79757285;
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-family: sans-serif;
+            font-weight: 600;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: background 0.2s ease;
+        }
+
+        .absolute-mute-button:hover {
+            background-color: #555;
         }
 
         /* Decorative borders and elements */
@@ -288,15 +309,15 @@
         }
 
         .event-location {
-            font-family: 'Pinyon Script', cursive;
-            font-size: 24px;
+            font-family: 'Cookie', cursive;
+            font-size: 36px;
             color: #3a3a3a;
             margin-bottom: 12px;
         }
 
         @media (min-width: 1024px) {
             .event-location {
-                font-size: 32px;
+                font-size: 52px;
             }
         }
 
