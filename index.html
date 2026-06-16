@@ -25,15 +25,15 @@
         </button>
         
         <!-- VIDEO SECTION -->
-        <section id="videoSection" class="w-full h-screen bg-[url('./videoframe_0(1).webp')] bg-cover bg-center">
+        <section id="videoSection" class="w-full h-screen bg-[url('./videoframe_0A.png')] bg-cover bg-center">
             <video id="myVideo" muted playsinline class="w-full h-full object-cover cursor-pointer">
                 <source src="./intro-video-new-CeLMqoNn(1fix).mp4" type="video/mp4">
             </video>
         </section>
 
         <!-- Upper Section -->
-        <section class="w-full section-top">
-            <div class="flex items-center justify-center bg-[url('./1st_section_bg.webp')] bg-cover bg-center h-screen">
+        <section id="scrollTarget" class="w-full section-top">
+            <div class="flex items-center justify-center bg-[url('./1st_section_bg2A.webp')] bg-cover bg-center h-screen">
                 <img class="w-[85%] h-auto md:h-[90%] mt-16 md:mt-0" src="./1st_Section_Asset_update2.svg" alt="Upper Decoration">
             </div>
         </section>
@@ -220,7 +220,7 @@
                                     type="text" 
                                     id="fullName"
                                     name="fullName"
-                                    placeholder="Jean Dupont" 
+                                    placeholder="" 
                                     class="w-full text-center bg-transparent border-b border-gray-400 outline-none pb-1 placeholder:text-gray-300"
                                     required>
                             </div>
@@ -342,7 +342,7 @@
 <script>
     const video = document.getElementById('myVideo');
     const videoSection = document.getElementById('videoSection');
-    const sectionTop = document.querySelector('.section-top');
+    const scrollTarget = document.getElementById('scrollTarget');
     
     // Lock scroll until video ends
     document.body.style.overflow = 'hidden';
@@ -357,8 +357,8 @@
         // Unlock scrolling
         document.body.style.overflow = 'auto';
         
-        // Scroll to section-top smoothly
-        // sectionTop.scrollIntoView({ behavior: 'smooth' });
+        // Scroll to scrollTarget smoothly
+        scrollTarget.scrollIntoView({ behavior: 'smooth' });
         
         // Hide video section after fade completes
         // setTimeout(() => {
